@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Dan Michael Alfaras - Full Stack Web Developer</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN with Forms & Container Queries -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind Configuration -->
+  <script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#00B96B',
+              'green-hover': '#029e5b',
+              dark: '#12181b',
+              darker: '#0e1316',
+              surface: '#F8F9FA',
+              border: '#E2E8F0',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Typography & Accent Styles -->
+  <style data-purpose="typography-and-decorations">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #334155;
+      background-color: #F8F9FA;
+    }
+
+    .section-title {
+      font-weight: 800;
+      color: #12181B;
+      letter-spacing: -0.025em;
+    }
+
+    .green-underline {
+      width: 76px;
+      height: 4px;
+      background-color: #00B96B;
+      border-radius: 9999px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+<body class="antialiased text-slate-700 bg-[#f7f9fa]">
+
+  <!-- BEGIN: MainHeader -->
+  <header
+    class="sticky top-0 z-50 bg-[#12181b] text-white border-b border-gray-800/80 shadow-md"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+    >
+      <!-- Brand Logo / Badge -->
+      <a class="flex items-center gap-3.5 group" href="#home">
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00B96B] to-[#05C375] flex items-center justify-center font-bold text-white text-base shadow-lg shadow-emerald-900/40 tracking-tight"
+        >
+          DM
+        </div>
+
+        <span
+          class="text-xl font-bold tracking-tight text-white group-hover:text-emerald-400 transition-colors"
+        >
+          Michael
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav
+        aria-label="Main Navigation"
+        class="hidden md:flex items-center gap-8 text-[15px] font-medium text-gray-300"
+      >
+        <a
+          class="hover:text-white transition-colors duration-150"
+          href="#home"
+        >
+          Home
+        </a>
+        <a
+          class="hover:text-white transition-colors duration-150"
+          href="#about"
+        >
+          About
+        </a>
+        <a
+          class="hover:text-white transition-colors duration-150"
+          href="#tools"
+        >
+          Tools
+        </a>
+        <a
+          class="hover:text-white transition-colors duration-150"
+          href="#projects"
+        >
+          Projects
+        </a>
+        <a
+          class="hover:text-white transition-colors duration-150"
+          href="#experience"
+        >
+          Experience
+        </a>
+        <a
+          class="hover:text-white transition-colors duration-150"
+          href="#contact"
+        >
+          Contact
+        </a>
+      </nav>
+
+      <!-- Action Button / Get in Touch -->
+      <div class="flex items-center gap-4">
+        <a
+          class="hidden sm:inline-flex items-center justify-center bg-[#00B96B] hover:bg-[#029e5b] text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition duration-200 shadow-md shadow-emerald-900/20 hover:scale-[1.02]"
+          href="#contact"
+        >
+          Get in Touch
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          aria-label="Toggle menu"
+          class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg"
+          id="mobile-menu-btn"
+          type="button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewbox="0 0 24 24"
+          >
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div
+      class="hidden md:hidden bg-[#151a1e] border-t border-gray-800 px-6 py-4 space-y-3"
+      id="mobile-menu"
+    >
+      <a
+        class="block text-gray-300 hover:text-emerald-400 text-base py-1"
+        href="#home"
+      >
+        Home
+      </a>
+      <a
+        class="block text-gray-300 hover:text-emerald-400 text-base py-1"
+        href="#about"
+      >
+        About
+      </a>
+      <a
+        class="block text-gray-300 hover:text-emerald-400 text-base py-1"
+        href="#tools"
+      >
+        Tools
+      </a>
+      <a
+        class="block text-gray-300 hover:text-emerald-400 text-base py-1"
+        href="#projects"
+      >
+        Projects
+      </a>
+      <a
+        class="block text-gray-300 hover:text-emerald-400 text-base py-1"
+        href="#experience"
+      >
+        Experience
+      </a>
+      <a
+        class="block text-gray-300 hover:text-emerald-400 text-base py-1"
+        href="#contact"
+      >
+        Contact
+      </a>
+      <a
+        class="inline-block mt-2 w-full text-center bg-[#00B96B] text-white py-2.5 rounded-lg font-semibold"
+        href="#contact"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </header>
+  <!-- END: MainHeader -->
+
+  <!-- BEGIN: HeroSection -->
+  <section
+    class="py-16 md:py-24 lg:py-28 overflow-hidden bg-white/70"
+    id="home"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
+      >
+
+        <!-- Left Hero Content Column -->
+        <div class="lg:col-span-7 flex flex-col justify-center text-left">
+          <span
+            class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#00B96B] mb-3"
+          >
+            HELLO, I'M
+          </span>
+
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#12181b] tracking-tight leading-tight mb-3"
+          >
+            Dan Michael <span class="text-[#00B96B]">Alfaras</span>
+          </h1>
+
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6">
+            Full Stack Web Developer
+          </h2>
+
+          <div
+            class="space-y-4 text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mb-8"
+          >
+            <p>
+              Welcome to my portfolio! I'm a passionate web developer who enjoys
+              creating clean, responsive, and user-friendly websites.
+            </p>
+
+            <p>
+              I love turning ideas into functional and engaging digital
+              experiences while continuously learning and improving my skills.
+            </p>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              class="px-7 py-3 bg-[#00B96B] hover:bg-[#029e5b] text-white font-bold rounded-lg shadow-sm transition hover:shadow-md hover:-translate-y-0.5 text-center"
+              href="#projects"
+            >
+              View My Work
+            </a>
+
+            <a
+              class="px-7 py-3 bg-white border border-gray-300 hover:border-gray-400 text-gray-800 font-semibold rounded-lg shadow-sm hover:bg-gray-50 transition text-center"
+              href="#contact"
+            >
+              Contact Me
+            </a>
+
+            <a
+              class="px-7 py-3 bg-white border border-gray-300 hover:border-gray-400 text-gray-800 font-semibold rounded-lg shadow-sm hover:bg-gray-50 transition text-center"
+              href="Dan_Michael_Alfaras_Resume.pdf"
+              target="_blank"
+              download
+            >
+              Downdload CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Image Column with decorative backdrop -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-[420px]">
+
+            <!-- Decorative emerald rounded background element -->
+            <div
+              class="absolute -top-3 -right-3 w-36 h-36 sm:w-44 sm:h-44 bg-[#00B96B] rounded-3xl -z-0 translate-x-2 -translate-y-2"
+            ></div>
+
+            <!-- Secondary subtle border outline -->
+            <div
+              class="absolute -top-1 -right-1 w-44 h-44 rounded-3xl border-2 border-[#00B96B]/50 -z-0 translate-x-4 -translate-y-4"
+            ></div>
+
+            <!-- White card container holding portrait -->
+            <div
+              class="relative z-10 bg-white p-3 sm:p-4 rounded-3xl shadow-xl shadow-slate-200/80 border border-gray-100 overflow-hidden"
+            >
+              <img
+                alt="Dan Michael Alfaras - Full Stack Web Developer"
+                class="w-full h-auto rounded-2xl object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRSS8mRnl32dlifS7r6dE2tJ9imm7EjrRwXDvS4_kqNAvXYSySp7H7gBnCICOR2opIwe62gKW8ynt-UAJrTe5xXcM-w8qCzE6Sfm5mZ88Ref4N_UvQTuXQkqyfwTclLZEl3KdNI1aFuqILxpzZndoQtA6bHYT3uMYKYKFbjsFIy30plFa-w3P2bCwcIO-WqDG5IlhMbuh7QZeDIl4cXlv9NMWut0C1rQ6zA0Xu-xXm7adgPpjIpwBTuCvQntkrYQJuf10"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END: HeroSection -->
+
+  <!-- BEGIN: AboutMeSection -->
+  <section
+    class="py-20 md:py-24 bg-white border-y border-slate-100"
+    id="about"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <!-- Section Title Header -->
+      <div class="mb-10">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-[#12181B] tracking-tight mb-3"
+        >
+          About Me
+        </h2>
+
+        <div class="green-underline"></div>
+      </div>
+
+      <!-- About Me Narrative Text with selective highlights -->
+      <div
+        class="space-y-6 text-gray-600 text-base sm:text-lg leading-relaxed text-center font-normal"
+      >
+        <p>
+          Hi, I'm
+          <strong class="font-bold text-gray-900">Dan Michael Alfaras</strong>,
+          an
+          <strong class="font-bold text-gray-900">
+            Information Technology graduate
+          </strong>
+          from
+          <strong class="font-bold text-gray-900">Asia Pacific College</strong>
+          with a strong background in
+          <strong class="font-bold text-gray-900">web development</strong>
+          and a passion for creating modern, responsive, and user-friendly
+          websites that provide a smooth and engaging experience across
+          different devices.
+        </p>
+
+        <p>
+          During my studies, I gained
+          <strong class="font-bold text-gray-900">hands-on experience</strong>
+          in both front-end and back-end development using technologies such as
+          <strong class="font-bold text-gray-900">
+            HTML5, CSS3, JavaScript, Bootstrap, PHP, Laravel, WordPress, and
+            MySQL
+          </strong>.
+          I also have experience with
+          <strong class="font-bold text-gray-900">
+            Git, Trello, and Google Analytics
+          </strong>,
+          which have helped me develop, manage, and monitor web projects
+          effectively.
+        </p>
+
+        <p>
+          I enjoy turning ideas into
+          <strong class="font-bold text-gray-900">
+            functional digital experiences
+          </strong>,
+          with a focus on responsive design, intuitive navigation, clean code,
+          usability, and accessibility. I am committed to
+          <strong class="font-bold text-gray-900">
+            continuous learning
+          </strong>
+          and enjoy exploring new technologies, frameworks, and development
+          practices to improve my skills and create better web solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- END: AboutMeSection -->
+
+  <!-- BEGIN: SkillsAndToolsSection -->
+  <section class="py-20 md:py-24 bg-[#F8F9FA]" id="tools">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <!-- Section Title & Subtitle -->
+      <div class="mb-14 max-w-3xl mx-auto">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-[#12181B] tracking-tight mb-3"
+        >
+          Skills &amp; Tools
+        </h2>
+
+        <div class="green-underline mb-6"></div>
+
+        <p class="text-gray-500 text-sm sm:text-base leading-relaxed">
+          A collection of projects that showcase my experience in web
+          development, design, and problem-solving. Each project reflects the
+          skills and technologies I have applied to create functional and
+          user-friendly solutions.
+        </p>
+      </div>
+
+      <!-- Skills Cards 4x3 Desktop Grid -->
+      <div
+        class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+
+        <!-- Skill 1: HTML5 -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <svg
+              class="w-10 h-10 text-[#E34F26]"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M12 2l-9.9 2.2 1.5 16.8 8.4 2.4 8.4-2.4 1.5-16.8zm-1.8 15.6l-4.7-1.3-.3-3.6h2.4l.2 1.8 2.4.7v2.4zm0-4.6h-4.8l-.3-3.6h5.1v3.6zm0-5.8H5.1l-.2-2.3h5.3v2.3zm6.6 8l-2.4.7v-2.4l2.4-.7.3-3.6h-5.1v-3.6h5.4l-.6 9.6z"
+              ></path>
+            </svg>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">01</span>
+          <h3 class="text-base font-bold text-gray-800">HTML5</h3>
+        </div>
+
+        <!-- Skill 2: CSS3 -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <svg
+              class="w-10 h-10 text-[#1572B6]"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M12 2l-9.9 2.2 1.5 16.8 8.4 2.4 8.4-2.4 1.5-16.8zm4.7 4.5l-.2 2.3h-4.5v2.3h4.3l-.5 5.8-3.8 1-3.8-1-.2-2.8h2.4l.1 1.4 1.5.4 1.5-.4.2-2.2H6.9l-.5-6h10.3z"
+              ></path>
+            </svg>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">02</span>
+          <h3 class="text-base font-bold text-gray-800">CSS3</h3>
+        </div>
+
+        <!-- Skill 3: JavaScript -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <div
+              class="w-10 h-10 bg-[#F7DF1E] text-black font-extrabold flex items-center justify-end p-1 rounded-sm text-sm"
+            >
+              JS
+            </div>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">03</span>
+          <h3 class="text-base font-bold text-gray-800">JavaScript</h3>
+        </div>
+
+        <!-- Skill 4: Bootstrap 5 -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <div
+              class="w-10 h-10 bg-[#7952B3] text-white font-extrabold flex items-center justify-center rounded-lg text-lg"
+            >
+              B
+            </div>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">04</span>
+          <h3 class="text-base font-bold text-gray-800">Bootstrap 5</h3>
+        </div>
+
+        <!-- Skill 5: PHP -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <div
+              class="w-12 h-7 bg-[#777BB4] text-white font-bold rounded-full flex items-center justify-center text-xs"
+            >
+              php
+            </div>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">05</span>
+          <h3 class="text-base font-bold text-gray-800">PHP</h3>
+        </div>
+
+        <!-- Skill 6: Laravel -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <svg
+              class="w-10 h-10 text-[#FF2D20]"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M21.2 5.5l-9-5.2c-.4-.2-.9-.2-1.3 0l-9 5.2c-.5.3-.9.9-.9 1.5v10.4c0 .6.4 1.2.9 1.5l9 5.2c.2.1.4.2.7.2.3 0 .5-.1.7-.2l9-5.2c.5-.3.9-.9.9-1.5V7c0-.6-.4-1.2-.9-1.5zm-9.7 15.5l-7.7-4.5V8.1l7.7 4.5v8.4zm1-9.9L4.8 6.6 11.5 2.7l6.7 3.9-5.7 3.3v1.2zm7.7 5.4l-6.7 3.9v-8.4l6.7-3.9v8.4z"
+              ></path>
+            </svg>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">06</span>
+          <h3 class="text-base font-bold text-gray-800">Laravel</h3>
+        </div>
+
+        <!-- Skill 7: MySQL -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <span class="text-xl font-black text-[#00758F] tracking-tighter">
+              MySQL
+            </span>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">07</span>
+          <h3 class="text-base font-bold text-gray-800">MySQL</h3>
+        </div>
+
+        <!-- Skill 8: WordPress -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <svg
+              class="w-10 h-10 text-[#21759B]"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-7.7 10a7.7 7.7 0 011.6-4.6l3.4 9.4A7.8 7.8 0 014.3 12zm7.7 7.7a7.6 7.6 0 01-2.9-.6l2.9-8.4 2.9 8.4a7.6 7.6 0 01-2.9.6zm1.1-10.7l2.5 7.1a7.7 7.7 0 002.1-4.1zm-8.8-1.5a7.7 7.7 0 0111.4 0L12 18z"
+              ></path>
+            </svg>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">08</span>
+          <h3 class="text-base font-bold text-gray-800">WordPress</h3>
+        </div>
+
+        <!-- Skill 9: Google Analytics -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <div class="flex items-end gap-1 h-8">
+              <div class="w-2 h-3 bg-[#F9AB00] rounded-sm"></div>
+              <div class="w-2 h-5 bg-[#F9AB00] rounded-sm"></div>
+              <div class="w-2 h-8 bg-[#E37400] rounded-sm"></div>
+            </div>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">09</span>
+          <h3 class="text-base font-bold text-gray-800">Google Analytics</h3>
+        </div>
+
+        <!-- Skill 10: Trello -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <div
+              class="w-9 h-9 bg-[#0079BF] rounded-lg p-1.5 flex gap-1 justify-center"
+            >
+              <div class="w-2.5 h-5 bg-white rounded-sm"></div>
+              <div class="w-2.5 h-3.5 bg-white rounded-sm"></div>
+            </div>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">10</span>
+          <h3 class="text-base font-bold text-gray-800">Trello</h3>
+        </div>
+
+        <!-- Skill 11: Git -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <svg
+              class="w-9 h-9 text-[#F05032]"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L8.6 4.8l2.7 2.7c.6-.2 1.3-.1 1.8.4.5.5.6 1.2.4 1.8l2.6 2.6c.6-.2 1.3-.1 1.8.4.7.7.7 1.9 0 2.6-.7.7-1.9.7-2.6 0-.6-.6-.7-1.4-.4-2.1l-2.4-2.4v4.9c.2.2.3.4.3.7 0 1-.8 1.9-1.9 1.9s-1.9-.9-1.9-1.9c0-.8.5-1.5 1.2-1.8V9.1c-.7-.3-1.2-1-1.2-1.8 0-.4.1-.7.3-1L2.4 10.9c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l8.6-8.5c.6-.6.6-1.5 0-2.1z"
+              ></path>
+            </svg>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">11</span>
+          <h3 class="text-base font-bold text-gray-800">Git</h3>
+        </div>
+
+        <!-- Skill 12: Figma -->
+        <div
+          class="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center hover:translate-y-[-2px] transition duration-200"
+        >
+          <div class="w-12 h-12 flex items-center justify-center mb-3">
+            <svg class="w-8 h-10" fill="none" viewbox="0 0 38 57">
+              <path
+                d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z"
+                fill="#1ABCFE"
+              ></path>
+              <path
+                d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z"
+                fill="#0ACF83"
+              ></path>
+              <path
+                d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z"
+                fill="#FF7262"
+              ></path>
+              <path
+                d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z"
+                fill="#F24E1E"
+              ></path>
+              <path
+                d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z"
+                fill="#A259FF"
+              ></path>
+            </svg>
+          </div>
+
+          <span class="text-xs font-bold text-[#00B96B] mb-1">12</span>
+          <h3 class="text-base font-bold text-gray-800">Figma</h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END: SkillsAndToolsSection -->
+
+  <!-- BEGIN: MyProjectsSection -->
+  <section
+    class="py-20 md:py-24 bg-white border-t border-slate-100"
+    id="projects"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-[#12181B] tracking-tight mb-3"
+        >
+          My Projects
+        </h2>
+
+        <div class="green-underline mb-6"></div>
+
+        <p class="text-gray-500 text-sm sm:text-base leading-relaxed">
+          A collection of projects that showcase my experience in web
+          development, design, and problem-solving. Each project reflects the
+          skills and technologies I have applied to create functional and
+          user-friendly solutions.
+        </p>
+      </div>
+
+      <!-- 3-Column Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project Card 1 -->
+        <article
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col hover:-translate-y-1 transition duration-200"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="E-Commerce API Documentation"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVmLq8TLpH7Htt3LgOsHC_4w5T0IzCJBh4LYX_I8-lWS7dvYuEgkvTcuwLybBA3ND47uq7V8YP5LMxk7RssFiumitvBaf6GdOt9aNkMu4YGMUSZZ-JhossORURj-b6VCHipCladYcZy1i5pHsrSHPg69PBRcSKMJ0tFTvtuK6SFWqej7u8YqWWlciKzYz3AWv9H13Huue_iBFmL4ciL1RtT6LT3ipkzKf3mAi_Xitgwm7coskVzFJONr6yjjDqrP2tL6M"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              API / BACKEND
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              E-Commerce API Documentation
+            </h3>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Dynamic E-commerce Workflow Management. The system features
+              dynamic routes for order processing, real-time inventory updates,
+              and secure user authentication. It also supports seamless
+              automated order reporting and comprehensive product management.
+              Documented backend API documentation is publicly available
+              through Postman.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project Card 2 -->
+        <article
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col hover:-translate-y-1 transition duration-200"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="Course Booking API Documentation"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRyPmFLzTnQYl-1kXSGFnX0q7XCALrDI8HU8imiYFTJClh_OnxqtIC16CkoYgfzN8dY1w5IK_P644f6UKARh2DQxiill_8kBPB8PXRLOXB99joUf462XaTo9l6TZWZgQbrKvK61Z1IVNC2ThdfEZrrFjGXSrJIxHndP6cQfme_6Gb4WcF9MTcdNb--8H1-QJinrN8ns9rILGVBDHcYDXNtsC_myFxnueT8dpN-p_uKsFRMFgFscwtIUcaLngrrnEYulA"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              API / BACKEND
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Course Booking API Documentation
+            </h3>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              RESTful API for managing course enrollments, featuring user
+              registration, authentication, and retrieval of user details.
+              Supports course creation, updates, archiving, activation, and
+              student enrollment. Publicly documented using Postman.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project Card 3 -->
+        <article
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col hover:-translate-y-1 transition duration-200"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="Course Booking App"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj8sOjQDSnUvdCoJqIAV1MFMnjmq2cQ7UKWzDUDvmHzFO-J2vL9yS8pSJ9oXZ3Iv5ZvNGfi7cXToOd1Kfxo-k3_jUc04c1KeT7uG7dc23eLoKoY4gwmbVUDT0rkvz0Y5_LIqpi6IS89iA81xlqA-PLJnGrKYSk3HCaT0wt3Mv-dVtcjGVdv37OrdW-nXiqvB4xFcJ2u78VzY4expjrWWSuIf5Ntf66mWT54Pkiihg_NYySro__O94BWVmPqGJvV1lQex4"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              MERN STACK
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Course Booking App
+            </h3>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              A MERN-stack course enrollment system featuring user registration,
+              authentication, and profile management. Authenticated users can
+              create, update, archive, and activate courses. The platform also
+              allows users to browse available courses and enroll seamlessly.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project Card 4 -->
+        <article
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col hover:-translate-y-1 transition duration-200"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="E-commerce App"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGPwZi9YmReE0MY4bzFUpy9rb6Cb3kqQDU447xSGyXgv491DB-hOBm9yqlmLhuTw7e6Dcqj2PpouVvgP5LYk8SGjvModhRQ6kpVjwzjWPAgwhfC6uU6S06xvj9o3gkQsFqk8lbG6AFfRBBbJNhMjrApD1TDn7qmJUSM35dB8D5-D4SNPQJlMQJbdCjTBG9ZSZfR7TcG0hrHnYI2BLxJNqmgZH_-OG2BGUAUrXRXtX7eydA82VsQ11eve97NqSQDopr7Qk"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              MERN STACK
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              E-commerce App
+            </h3>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              MERN E-Commerce Platform. The platform features dynamic product
+              catalog with filtering and sorting, real-time search, seamless
+              cart updates, secure checkout, and a comprehensive admin
+              dashboard with realtime analytics and user management
+              capabilities.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project Card 5 -->
+        <article
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col hover:-translate-y-1 transition duration-200"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="Airline Booking System Mockup"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgdysd0_EdX0eWRh0UI6WkecbH545A3meL9LQiqM-_pWjrcWukvisYQ9PITp4c1ouQA6OYeH0SYqJ-XUODIib_slvNf_O2lcb_N_InwJ7rl9pJxFKj1tJHaV6u4FOg1FlTJ8YJEMPOqUP3aHKOTenUtFLd6jvrssBfuO7LdIuBpyK1SyhLPqTZPS-x7H-UMDM9shaztjPa8TfX5KQt2aAw9rvK3rjGc63iqd7MX2tykvVaY-qfKdc4WnHNCK80HSgX6x8"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              UI / UX
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Airline Booking System Mockup
+            </h3>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Side Project: Conceptual design showcasing an intuitive UI for
+              flight search, seat selection, and booking confirmation, focusing
+              on user experience and workflow efficiency.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project Card 6 -->
+        <article
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col hover:-translate-y-1 transition duration-200"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="Airline Booking System Prototype"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuATAsV1BuDwTMRVz3J1oBDy5uRWBdxTNmdQsMYJxNquFnWsgoQ1fMA_7KLmUzF_JvshYoAWcAAIngwFM6sgOIbouNVsA_K0TohH-VXQLWVizqyGquaPhffRavGStBA-ZwD1-Tm7qOaIJuyazgN0wP2ANf_spu7_lmLaB24s5uPC9tK-LcWcHsC7gWhysRztGvcRdwvZPU6rhRyBuSL73geQRkyr4b45FgPz6WQIHj5xy4o2oFDZFPUBspX1WpxzWM70bGw"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              PROTOTYPE
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Airline Booking System Prototype
+            </h3>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Side Project: Interactive prototype simulating end-to-end airline
+              booking functionalities, including flight search, reservation,
+              payment processing, and real-time ticket management.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!-- END: MyProjectsSection -->
+
+  <!-- BEGIN: MyCapstoneSection -->
+  <section class="py-20 md:py-24 bg-[#F8F9FA]" id="capstone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title & Description -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-[#12181B] tracking-tight mb-3"
+        >
+          My Capstone
+        </h2>
+
+        <div class="green-underline mb-6"></div>
+
+        <p class="text-gray-500 text-sm sm:text-base leading-relaxed">
+          My capstone project represents the application of the knowledge and
+          skills I developed throughout my studies. It demonstrates my ability
+          to plan, design, develop, and implement a complete solution to
+          address a specific problem or need.
+        </p>
+      </div>
+
+      <!-- 3-Column Capstone Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Capstone 1 -->
+        <div
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] overflow-hidden hover:-translate-y-1 transition duration-200 flex flex-col"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="Short Course Capstone - Certificate"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUHtvr_zOHCizCRHk_-0whqqA1rIs2N8FexCrUK6NQ65HNJ0D2F7cYQg1KT4LOMW58rB3-GDsHOqZcXoUMPbgmFOSMNYZmx9QOPR71IpwnDYq7AZtwpLKLUvdtZjtuRKvmPjOV0ZRejrzhPNOLftKDIE_EDomwSCFyn-f1laGz4KtkOW7ck_IJ01_V1IpCvsledoTwLQypDvQwkmsAhvZ7A77QCxHhEjh_r9YwR2U6FIghf7s0H9kSv0ZSsaqzlRegZE"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              CAPSTONE
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Short Course Capstone
+            </h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Placeholder for your short course capstone project.
+            </p>
+          </div>
+        </div>
+
+        <!-- Capstone 2 -->
+        <div
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] overflow-hidden hover:-translate-y-1 transition duration-200 flex flex-col"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="Data Engineering &amp; Machine Learning"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGovKMMmjGcIfGnGydDW5lUw0CNAoyTTKs52s1wKXPoe1RisbmimVfEIpzso2f82lVAXKPFPpALoDl0fjcGltd4NBpViytPRqyb_vwQmKsDGGz0QFc9wUSOFQ4fSkmOfFN_MqIxfKSJsc7aZ5h1TC66V17-JjDNzMzvRXdDUK4-xXzYJ_wDYdLbIvCWXDcBVgGvV-7fkJwshO-XouiqzBsv1GcabNXjiq85wRDFz1MJ0hdg1FG0lU7vTMnMMaU7RQKKsU"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              CAPSTONE
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Short Course Capstone
+            </h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Placeholder for your short course capstone project.
+            </p>
+          </div>
+        </div>
+
+        <!-- Capstone 3 -->
+        <div
+          class="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] overflow-hidden hover:-translate-y-1 transition duration-200 flex flex-col"
+        >
+          <div class="aspect-video w-full bg-slate-900 overflow-hidden">
+            <img
+              alt="Integrated Fintech &amp; Health Platform"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAijgRmiWPjcnC7e5HfBJsmuWDVRtDv8BSeavvXFSZp8F9glz7Qt2qz6369kjv_SQ1OO7WfxLewEXvxvjHCOGEb6voqTV9ev4G9tz8hCH1znBQCmfHFmSr9hPNSHtmGEhY533Sg1POIv1EyldFRh_cYIALbd6eHWbN4mLp8fOexIILjNKIkp4bDKw_oGVOzMllkHXQeGn-eocoZe3Fv5qU7VLba76KVh04K2qmTfxt2J2iovQ-Og_KKKQ6lAAwAiytsYx0"
+            />
+          </div>
+
+          <div class="p-6 sm:p-7 flex-1 flex flex-col">
+            <span
+              class="text-xs font-bold tracking-wider text-[#00B96B] uppercase mb-2"
+            >
+              CAPSTONE
+            </span>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Short Course Capstone
+            </h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Placeholder for your short course capstone project.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END: MyCapstoneSection -->
+
+  <!-- BEGIN: ExperienceSection -->
+  <section
+    class="py-20 md:py-24 bg-white border-y border-slate-100"
+    id="experience"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-[#12181B] tracking-tight mb-3"
+        >
+          Experience
+        </h2>
+
+        <div class="green-underline"></div>
+      </div>
+
+      <!-- Experience Timeline Layout -->
+      <div class="space-y-12">
+
+        <!-- Experience Item 1 -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start"
+        >
+          <div class="md:col-span-4 text-left">
+            <span class="text-base sm:text-lg font-bold text-gray-900">
+              August 2020 – July 2024
+            </span>
+          </div>
+
+          <div class="md:col-span-8 text-left space-y-2">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+              Information Technology Student
+              <br class="sm:hidden" />
+              <span class="font-bold text-gray-900">
+                [Asia Pacific College]
+              </span>
+            </h3>
+
+            <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Developed knowledge and practical skills in project management,
+              database management, software development life cycle, and website
+              development. Gained experience applying these concepts through
+              academic projects and hands-on development activities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start"
+        >
+          <div class="md:col-span-4 text-left">
+            <span class="text-base sm:text-lg font-bold text-gray-900">
+              [Nov 2023 – May 2024]
+            </span>
+          </div>
+
+          <div class="md:col-span-8 text-left space-y-2">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+              Wordpress Development Intern
+              <br class="sm:hidden" />
+              <span class="font-bold text-gray-900">
+                [Spiralytics, Inc.]
+              </span>
+            </h3>
+
+            <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Gained hands-on experience in WordPress development, website
+              content management, and Google Analytics. Worked in an Agile
+              environment, collaborating with team members and following
+              structured workflows to support website updates, testing, and
+              project tasks.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END: ExperienceSection -->
+
+  <!-- BEGIN: ContactSection -->
+  <section class="py-20 md:py-24 bg-[#F8F9FA]" id="contact">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-[#00B96B] tracking-tight mb-3"
+        >
+          Get in Touch
+        </h2>
+
+        <div class="w-20 h-1 bg-gray-900 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Elevated Contact Form Card -->
+      <div
+        class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 p-8 sm:p-12"
+      >
+        <form class="space-y-6" onsubmit="event.preventDefault();">
+
+          <!-- Name Row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label
+                class="block text-sm font-bold text-gray-800 mb-2"
+                for="first_name"
+              >
+                First Name
+              </label>
+
+              <input
+                class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#00B96B] focus:ring-[#00B96B] outline-none transition placeholder:text-gray-400"
+                id="first_name"
+                placeholder="Enter your first name"
+                required=""
+                type="text"
+              />
+            </div>
+
+            <div>
+              <label
+                class="block text-sm font-bold text-gray-800 mb-2"
+                for="last_name"
+              >
+                Last Name
+              </label>
+
+              <input
+                class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#00B96B] focus:ring-[#00B96B] outline-none transition placeholder:text-gray-400"
+                id="last_name"
+                placeholder="Enter your last name"
+                required=""
+                type="text"
+              />
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div>
+            <label
+              class="block text-sm font-bold text-gray-800 mb-2"
+              for="email"
+            >
+              Email
+            </label>
+
+            <input
+              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#00B96B] focus:ring-[#00B96B] outline-none transition placeholder:text-gray-400"
+              id="email"
+              placeholder="email@example.com"
+              required=""
+              type="email"
+            />
+          </div>
+
+          <!-- Phone Number Input -->
+          <div>
+            <label
+              class="block text-sm font-bold text-gray-800 mb-2"
+              for="phone"
+            >
+              Phone Number
+            </label>
+
+            <input
+              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#00B96B] focus:ring-[#00B96B] outline-none transition placeholder:text-gray-400"
+              id="phone"
+              placeholder="+63 912 345 6789"
+              type="tel"
+            />
+          </div>
+
+          <!-- Subject Input -->
+          <div>
+            <label
+              class="block text-sm font-bold text-gray-800 mb-2"
+              for="subject"
+            >
+              Subject
+            </label>
+
+            <input
+              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#00B96B] focus:ring-[#00B96B] outline-none transition placeholder:text-gray-400"
+              id="subject"
+              placeholder="What is this about?"
+              required=""
+              type="text"
+            />
+          </div>
+
+          <!-- Company / Organization Input (Optional) -->
+          <div>
+            <label
+              class="block text-sm font-bold text-gray-800 mb-2"
+              for="company"
+            >
+              Company / Organization
+              <span class="font-normal text-gray-500">(Optional)</span>
+            </label>
+
+            <input
+              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#00B96B] focus:ring-[#00B96B] outline-none transition placeholder:text-gray-400"
+              id="company"
+              placeholder="Company name"
+              type="text"
+            />
+          </div>
+
+          <!-- Message Textarea -->
+          <div>
+            <label
+              class="block text-sm font-bold text-gray-800 mb-2"
+              for="message"
+            >
+              Message
+            </label>
+
+            <textarea
+              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#00B96B] focus:ring-[#00B96B] outline-none transition placeholder:text-gray-400"
+              id="message"
+              placeholder="Enter your message"
+              required=""
+              rows="5"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button
+              class="w-full py-3.5 px-6 rounded-xl bg-[#00B96B] hover:bg-[#029e5b] text-white font-bold text-base shadow-md shadow-emerald-900/10 transition duration-150 transform active:scale-[0.99]"
+              type="submit"
+            >
+              Send Message
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- END: ContactSection -->
+
+  <!-- BEGIN: FooterSection -->
+  <footer
+    class="bg-[#12181b] text-white pt-16 pb-12 border-t border-gray-800"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Top 3-Column Footer Layout -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-start mb-14 text-center md:text-left"
+      >
+
+        <!-- Left Column: Branding -->
+        <div class="flex flex-col items-center md:items-start">
+          <div class="flex items-center gap-3.5 mb-3">
+            <div
+              class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00B96B] to-[#05C375] flex items-center justify-center font-bold text-white text-base shadow-md shadow-emerald-900/30"
+            >
+              DM
+            </div>
+
+            <span class="text-xl font-bold tracking-tight text-white">
+              Dan Michael Alfaras
+            </span>
+          </div>
+
+          <p class="text-gray-400 text-sm">
+            Full Stack Web Developer
+          </p>
+        </div>
+
+        <!-- Center Column: Navigation -->
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-white mb-4">
+            Navigation
+          </h4>
+
+          <div
+            class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-gray-400 max-w-xs mx-auto"
+          >
+            <a
+              class="hover:text-emerald-400 transition-colors"
+              href="#home"
+            >
+              Home
+            </a>
+
+            <a
+              class="hover:text-emerald-400 transition-colors"
+              href="#about"
+            >
+              About
+            </a>
+
+            <a
+              class="hover:text-emerald-400 transition-colors"
+              href="#tools"
+            >
+              Tools
+            </a>
+
+            <a
+              class="hover:text-emerald-400 transition-colors"
+              href="#projects"
+            >
+              Projects
+            </a>
+
+            <a
+              class="hover:text-emerald-400 transition-colors"
+              href="#experience"
+            >
+              Experience
+            </a>
+
+            <a
+              class="hover:text-emerald-400 transition-colors"
+              href="#contact"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Connect With Me -->
+        <div class="flex flex-col items-center md:items-end">
+          <h4 class="text-lg font-bold text-white mb-4">
+            Connect With Me
+          </h4>
+
+          <div
+            class="flex flex-col items-center md:items-end space-y-2 text-sm text-gray-400"
+          >
+            <a
+              class="hover:text-emerald-400 transition-colors flex items-center gap-2"
+              href="https://linkedin.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              class="hover:text-emerald-400 transition-colors flex items-center gap-2"
+              href="https://github.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GitHub
+            </a>
+
+            <a
+              class="hover:text-emerald-400 transition-colors flex items-center gap-2"
+              href="mailto:danmichael@example.com"
+            >
+              Gmail
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-800/80 pt-8 text-center">
+        <p class="text-gray-400 text-xs sm:text-sm">
+          © 2026 Dan Michael Alfaras. All Rights Reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END: FooterSection -->
+
+  <!-- JavaScript for Navigation Interactivity -->
+  <script data-purpose="mobile-menu-interactivity">
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
+
+</body>
+
+</html>
