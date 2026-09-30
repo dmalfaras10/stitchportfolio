@@ -19,7 +19,6 @@
   <meta property="og:url" content="https://dmalfaras10.github.io/stitchportfolio/">
   <meta property="og:image" content="https://github.com/dmalfaras10/stitchportfolio/blob/master/favicon.png">
   <meta property="og:description" content="Explore Dan Michael Alfaras' portfolio featuring web projects, technical skills, experience, and modern digital solutions.">
-
   <!-- Tailwind CSS CDN with Forms & Container Queries -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <!-- Tailwind Configuration -->
@@ -73,31 +72,43 @@
 <body class="antialiased text-slate-700 bg-[#f7f9fa]">
 
   <!-- BEGIN: MainHeader -->
+
   <header
     class="sticky top-0 z-50 bg-[#12181b] text-white border-b border-gray-800/80 shadow-md"
   >
+    <!-- Hidden checkbox controls the menu -->
+    <input
+      type="checkbox"
+      id="mobile-menu-toggle"
+      class="peer sr-only"
+    />
+
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
     >
       <!-- Brand Logo / Badge -->
       <a class="flex items-center gap-3.5 group" href="#home">
         <div
-          class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00B96B] to-[#05C375] flex items-center justify-center font-bold text-white text-base shadow-lg shadow-emerald-900/40 tracking-tight"
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00B96B] to-[#05C375]
+          flex items-center justify-center font-bold text-white text-base
+          shadow-lg shadow-emerald-900/40 tracking-tight"
         >
           DM
         </div>
 
         <span
-          class="text-xl font-bold tracking-tight text-white group-hover:text-emerald-400 transition-colors"
+          class="text-xl font-bold tracking-tight text-white
+          group-hover:text-emerald-400 transition-colors"
         >
           Michael
         </span>
       </a>
 
-      <!-- Desktop Navigation Menu -->
+      <!-- Desktop Navigation -->
       <nav
         aria-label="Main Navigation"
-        class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-300"
+        class="hidden lg:flex items-center gap-8 text-[15px]
+        font-medium text-gray-300"
       >
         <a
           class="hover:text-white transition-colors duration-150"
@@ -105,30 +116,35 @@
         >
           Home
         </a>
+
         <a
           class="hover:text-white transition-colors duration-150"
           href="#about"
         >
           About
         </a>
+
         <a
           class="hover:text-white transition-colors duration-150"
           href="#tools"
         >
           Tools
         </a>
+
         <a
           class="hover:text-white transition-colors duration-150"
           href="#projects"
         >
           Projects
         </a>
+
         <a
           class="hover:text-white transition-colors duration-150"
           href="#experience"
         >
           Experience
         </a>
+
         <a
           class="hover:text-white transition-colors duration-150"
           href="#contact"
@@ -137,43 +153,64 @@
         </a>
       </nav>
 
-      <!-- Action Button / Get in Touch -->
+      <!-- Right Side -->
       <div class="flex items-center gap-4">
+
+        <!-- Get in Touch -->
         <a
-          class="hidden sm:inline-flex items-center justify-center bg-[#00B96B] hover:bg-[#029e5b] text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition duration-200 shadow-lg shadow-emerald-900/20 hover:scale-[1.02]"
+          class="hidden sm:inline-flex items-center justify-center
+          bg-[#00B96B] hover:bg-[#029e5b] text-white font-semibold
+          text-sm px-6 py-2.5 rounded-xl transition duration-200
+          shadow-lg shadow-emerald-900/20 hover:scale-[1.02]"
           href="#contact"
         >
           Get in Touch
         </a>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button
+        <!-- Mobile Menu Button -->
+        <label
+          for="mobile-menu-toggle"
           aria-label="Toggle menu"
-          class="lg:hidden text-gray-300 hover:text-white p-2 rounded-lg"
-          id="mobile-menu-btn"
-          type="button"
+          class="lg:hidden cursor-pointer text-gray-300
+          hover:text-white p-2 rounded-lg"
         >
+          <!-- Hamburger -->
           <svg
-            class="w-6 h-6"
+            class="w-6 h-6 peer-checked:hidden"
             fill="none"
             stroke="currentColor"
-            viewbox="0 0 24 24"
+            viewBox="0 0 24 24"
           >
             <path
               d="M4 6h16M4 12h16M4 18h16"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-            ></path>
+            />
           </svg>
-        </button>
+
+          <!-- Close icon -->
+          <svg
+            class="hidden w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 6l12 12M6 18L18 6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </label>
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
+    <!-- Mobile Menu -->
     <div
-      class="hidden lg:hidden bg-[#151a1e] border-t border-gray-800 px-6 py-4 space-y-3"
-      id="mobile-menu"
+      class="hidden peer-checked:block lg:hidden
+      bg-[#151a1e] border-t border-gray-800 px-6 py-4 space-y-3"
     >
       <a
         class="block text-gray-300 hover:text-emerald-400 text-base py-1"
@@ -181,38 +218,45 @@
       >
         Home
       </a>
+
       <a
         class="block text-gray-300 hover:text-emerald-400 text-base py-1"
         href="#about"
       >
         About
       </a>
+
       <a
         class="block text-gray-300 hover:text-emerald-400 text-base py-1"
         href="#tools"
       >
         Tools
       </a>
+
       <a
         class="block text-gray-300 hover:text-emerald-400 text-base py-1"
         href="#projects"
       >
         Projects
       </a>
+
       <a
         class="block text-gray-300 hover:text-emerald-400 text-base py-1"
         href="#experience"
       >
         Experience
       </a>
+
       <a
         class="block text-gray-300 hover:text-emerald-400 text-base py-1"
         href="#contact"
       >
         Contact
       </a>
+
       <a
-        class="inline-block mt-2 w-full text-center bg-[#00B96B] text-white py-2.5 rounded-lg font-semibold"
+        class="inline-block mt-2 w-full text-center
+        bg-[#00B96B] text-white py-2.5 rounded-lg font-semibold"
         href="#contact"
       >
         Get in Touch
@@ -1376,7 +1420,7 @@
   <!-- END: FooterSection -->
 
   <!-- JavaScript for Navigation Interactivity -->
-  <script data-purpose="mobile-menu-interactivity">
+<!--   <script data-purpose="mobile-menu-interactivity">
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -1392,7 +1436,7 @@
         });
       });
     }
-  </script>
+  </script> -->
 
 </body>
 
